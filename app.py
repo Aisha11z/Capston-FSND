@@ -11,7 +11,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 
 def create_app(test_config=None):
-    ENV = 'dev'
+    ENV = 'prod'
     app = Flask(__name__)
     setup_db(app)
     cors = CORS(app)

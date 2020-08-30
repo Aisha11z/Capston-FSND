@@ -6,7 +6,7 @@ from sqlalchemy.orm import backref
 import psycopg2
 
 
-ENV = 'dev'
+ENV = 'prod'
 
 if ENV == 'dev':
     database_name = "capstone"
