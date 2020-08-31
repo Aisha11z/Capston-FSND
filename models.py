@@ -5,9 +5,10 @@ import json
 from sqlalchemy.orm import backref
 import psycopg2
 
-
+#set the value of the variable to 'prod'  if in the production mood or to 'dev' if in the developing mood
 ENV = 'prod'
 
+# check if in the developing mood to use the local db 
 if ENV == 'dev':
     database_name = "capstone"
     database_path = "postgres://{}/{}".format('postgres:aisha_abdullah@localhost:5432', database_name)
