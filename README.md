@@ -99,6 +99,7 @@ GET '/directors'
 - Request Arguments: None
 - Authentication: the roles that can acess are ADMIN and USER
 - Returns: A JSON with list of directors objects,status and success value.
+- ##### NOTE: you should create a movie before creating a director , because you need to pass the id of the movie.
 ```bash
 curl --location --request GET 'https://capstone-fsns-2020.herokuapp.com/directors' \
 --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY2ODIwNzZhNzAwNjc4ZWUxZWEiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTUzNCwiZXhwIjoxNTk4ODg4NzM0LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiXX0.UFFVazmntfOPfiTGgP-GmJRtvPlgKO3qTeEVYC5DeqCRFu57dXkv4Ta6uOhd6_CXro2Yh3BFg_uoI0Vw0hQvusmLiMu1D2x1fhcZ26UfE-UpfwLW5q1v7Ur1cLfz3VmTOMujrMeQqZFttHhqTthblb7P-e_LipeAak-KXdiRyHSsmZXBndSn8PxIMRbjkkg44qUlIbVeo9Zqc8EUhs8D6Qec7sdreKgPMwxzBHRMd6dPIRFGlYkDz5GyFSQnJz63xKD38QqwCIWzeAK_HG4BZ59v_m1ksQ0KQzeINEtHBIsOjBGGcVnWhHe9PqYOPfoV6rE043kJ0FUGGrEj3BQrgQ'
@@ -138,7 +139,7 @@ POST '/director'
 curl --location --request POST 'https://capstone-fsns-2020.herokuapp.com/director' \
 --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg' \
 --header 'Content-Type: application/json' \
---data-raw '{"director_name":"Lazaro Neto","movie_id":1}'
+--data-raw '{"director_name":"Lazaro Neto","movie_id":4}'
 ```
 ```bash
 {
@@ -152,7 +153,7 @@ PATCH '/movie/<int:movie_id>'
 - Authentication: only the ADMIN
 - Returns : A JSON with success value and the status
 ```bash
-curl --location --request PATCH 'https://capstone-fsns-2020.herokuapp.com/movie/1' \
+curl --location --request PATCH 'https://capstone-fsns-2020.herokuapp.com/movie/4' \
 --header 'Authorization: Bearer eeyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg' \
 --header 'Content-Type: application/json' \
 --data-raw '{"movie_title":"The Movie", "movie_rate": 7}'
@@ -168,7 +169,7 @@ DELETE '/movies/<int:movie_id>'
 - Request Arguments: id of the movie eg:'/movies/1'
 - Returns: A JSON with success value and the status
 ```bash
-curl --location --request DELETE 'https://capstone-fsns-2020.herokuapp.com/movies/1' \
+curl --location --request DELETE 'https://capstone-fsns-2020.herokuapp.com/movies/4' \
 --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg' \
 --data-raw ''
 ```
