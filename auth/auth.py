@@ -13,7 +13,7 @@ if ENV == 'dev':
     API_AUDIENCE = 'capstone'
 else:
     AUTH0_DOMAIN = os.environ['AUTH0_DOMAIN']
-    ALGORITHMS = os.environ['ALGORITHMS']
+    ALGORITHMS = os.environ['ALGORITHIMS']
     API_AUDIENCE = os.environ['API_AUDIENCE']
 
 #AuthError Exception
