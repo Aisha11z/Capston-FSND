@@ -1,0 +1,390 @@
+{
+	"id": "91bdff47-c548-48f7-958e-bb8e9bf2f7b5",
+	"name": "udacity-fsnd-udaspicelatte Copy 2",
+	"timestamp": "2020-08-31T13:52:25.157Z",
+	"collection_id": "ff68f9ac-98fa-4b0a-ba64-c2e222c2df5b",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 12,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "249df1e5-68ab-4116-87fd-46e446a5eb4c",
+			"name": "/movies",
+			"url": "https://capstone-fsns-2020.herokuapp.com/movies",
+			"time": 264,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				264
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "5cb8dcd8-c979-4092-a1ad-45df083d1b3a",
+			"name": "/directors",
+			"url": "https://capstone-fsns-2020.herokuapp.com/directors",
+			"time": 267,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				267
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "8c65c8a6-dcb0-4352-9c44-f6778d8b7b8c",
+			"name": "/movie",
+			"url": "https://capstone-fsns-2020.herokuapp.com/movie",
+			"time": 249,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				249
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "24d6d32e-1dcc-4927-900e-181755177765",
+			"name": "/director",
+			"url": "https://capstone-fsns-2020.herokuapp.com/director",
+			"time": 232,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				232
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "031d508c-1838-45b9-a401-8bf2c606951a",
+			"name": "/movies/1",
+			"url": "https://capstone-fsns-2020.herokuapp.com/movie/1",
+			"time": 226,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				226
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "01a8c3e6-6947-410b-bd93-fb77c3c8e64a",
+			"name": "/movies/1",
+			"url": "https://capstone-fsns-2020.herokuapp.com/movies/1",
+			"time": 232,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				232
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "5ae32474-6818-4ca5-b484-9b30a19d91e1",
+			"name": "/movies",
+			"url": "https://capstone-fsns-2020.herokuapp.com/movies",
+			"time": 235,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "ead79d80-edf5-464b-bb39-761e12d7808a",
+			"name": "/directors ",
+			"url": "https://capstone-fsns-2020.herokuapp.com/directors",
+			"time": 241,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				241
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "e693cd9d-f40d-4e71-bc24-4068b456369e",
+			"name": "/movie ",
+			"url": "https://capstone-fsns-2020.herokuapp.com/movie",
+			"time": 233,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				233
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "91bc8332-a4b3-4390-928c-db656c21f251",
+			"name": "/director",
+			"url": "https://capstone-fsns-2020.herokuapp.com/director",
+			"time": 342,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				342
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "b10b410f-cd76-4cd9-8256-87a1c13a50e8",
+			"name": "/movies/1",
+			"url": "https://capstone-fsns-2020.herokuapp.com/movie/3",
+			"time": 243,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				243
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "3e4ac412-1cce-48d2-b94d-c6b1df431b24",
+			"name": "/movies/1",
+			"url": "https://capstone-fsns-2020.herokuapp.com/movies/3",
+			"time": 275,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				275
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3039,
+	"collection": {
+		"requests": [
+			{
+				"id": "249df1e5-68ab-4116-87fd-46e446a5eb4c",
+				"method": "GET"
+			},
+			{
+				"id": "5cb8dcd8-c979-4092-a1ad-45df083d1b3a",
+				"method": "GET"
+			},
+			{
+				"id": "8c65c8a6-dcb0-4352-9c44-f6778d8b7b8c",
+				"method": "POST"
+			},
+			{
+				"id": "24d6d32e-1dcc-4927-900e-181755177765",
+				"method": "POST"
+			},
+			{
+				"id": "031d508c-1838-45b9-a401-8bf2c606951a",
+				"method": "PATCH"
+			},
+			{
+				"id": "01a8c3e6-6947-410b-bd93-fb77c3c8e64a",
+				"method": "DELETE"
+			},
+			{
+				"id": "5ae32474-6818-4ca5-b484-9b30a19d91e1",
+				"method": "GET"
+			},
+			{
+				"id": "ead79d80-edf5-464b-bb39-761e12d7808a",
+				"method": "GET"
+			},
+			{
+				"id": "e693cd9d-f40d-4e71-bc24-4068b456369e",
+				"method": "POST"
+			},
+			{
+				"id": "91bc8332-a4b3-4390-928c-db656c21f251",
+				"method": "POST"
+			},
+			{
+				"id": "b10b410f-cd76-4cd9-8256-87a1c13a50e8",
+				"method": "PATCH"
+			},
+			{
+				"id": "3e4ac412-1cce-48d2-b94d-c6b1df431b24",
+				"method": "DELETE"
+			}
+		]
+	}
+}

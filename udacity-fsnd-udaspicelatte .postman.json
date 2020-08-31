@@ -1,0 +1,696 @@
+{
+	"info": {
+		"_postman_id": "ff68f9ac-98fa-4b0a-ba64-c2e222c2df5b",
+		"name": "udacity-fsnd-udaspicelatte Copy 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f13c99a2-bce3-4d43-8008-a68cfdd34dce",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY2ODIwNzZhNzAwNjc4ZWUxZWEiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTUzNCwiZXhwIjoxNTk4ODg4NzM0LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiXX0.UFFVazmntfOPfiTGgP-GmJRtvPlgKO3qTeEVYC5DeqCRFu57dXkv4Ta6uOhd6_CXro2Yh3BFg_uoI0Vw0hQvusmLiMu1D2x1fhcZ26UfE-UpfwLW5q1v7Ur1cLfz3VmTOMujrMeQqZFttHhqTthblb7P-e_LipeAak-KXdiRyHSsmZXBndSn8PxIMRbjkkg44qUlIbVeo9Zqc8EUhs8D6Qec7sdreKgPMwxzBHRMd6dPIRFGlYkDz5GyFSQnJz63xKD38QqwCIWzeAK_HG4BZ59v_m1ksQ0KQzeINEtHBIsOjBGGcVnWhHe9PqYOPfoV6rE043kJ0FUGGrEj3BQrgQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/directors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "086be529-bd3f-4f92-b26c-69227d93db5d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY2ODIwNzZhNzAwNjc4ZWUxZWEiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTUzNCwiZXhwIjoxNTk4ODg4NzM0LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiXX0.UFFVazmntfOPfiTGgP-GmJRtvPlgKO3qTeEVYC5DeqCRFu57dXkv4Ta6uOhd6_CXro2Yh3BFg_uoI0Vw0hQvusmLiMu1D2x1fhcZ26UfE-UpfwLW5q1v7Ur1cLfz3VmTOMujrMeQqZFttHhqTthblb7P-e_LipeAak-KXdiRyHSsmZXBndSn8PxIMRbjkkg44qUlIbVeo9Zqc8EUhs8D6Qec7sdreKgPMwxzBHRMd6dPIRFGlYkDz5GyFSQnJz63xKD38QqwCIWzeAK_HG4BZ59v_m1ksQ0KQzeINEtHBIsOjBGGcVnWhHe9PqYOPfoV6rE043kJ0FUGGrEj3BQrgQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/directors",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"directors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1e57c472-c696-4aa8-90d0-5eff37ca0770",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY2ODIwNzZhNzAwNjc4ZWUxZWEiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTUzNCwiZXhwIjoxNTk4ODg4NzM0LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiXX0.UFFVazmntfOPfiTGgP-GmJRtvPlgKO3qTeEVYC5DeqCRFu57dXkv4Ta6uOhd6_CXro2Yh3BFg_uoI0Vw0hQvusmLiMu1D2x1fhcZ26UfE-UpfwLW5q1v7Ur1cLfz3VmTOMujrMeQqZFttHhqTthblb7P-e_LipeAak-KXdiRyHSsmZXBndSn8PxIMRbjkkg44qUlIbVeo9Zqc8EUhs8D6Qec7sdreKgPMwxzBHRMd6dPIRFGlYkDz5GyFSQnJz63xKD38QqwCIWzeAK_HG4BZ59v_m1ksQ0KQzeINEtHBIsOjBGGcVnWhHe9PqYOPfoV6rE043kJ0FUGGrEj3BQrgQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie_tiltle\":\"titanic\",\n    \"movie_rate\": 8\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/movie",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/director",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "099613c7-6ba8-45ab-ba69-6302f9c94806",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY2ODIwNzZhNzAwNjc4ZWUxZWEiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTUzNCwiZXhwIjoxNTk4ODg4NzM0LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiXX0.UFFVazmntfOPfiTGgP-GmJRtvPlgKO3qTeEVYC5DeqCRFu57dXkv4Ta6uOhd6_CXro2Yh3BFg_uoI0Vw0hQvusmLiMu1D2x1fhcZ26UfE-UpfwLW5q1v7Ur1cLfz3VmTOMujrMeQqZFttHhqTthblb7P-e_LipeAak-KXdiRyHSsmZXBndSn8PxIMRbjkkg44qUlIbVeo9Zqc8EUhs8D6Qec7sdreKgPMwxzBHRMd6dPIRFGlYkDz5GyFSQnJz63xKD38QqwCIWzeAK_HG4BZ59v_m1ksQ0KQzeINEtHBIsOjBGGcVnWhHe9PqYOPfoV6rE043kJ0FUGGrEj3BQrgQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"director_name\":\"name\",\n    \"movie_id\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/director",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"director"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9227f28e-f8fb-49dd-8624-e4870c086c66",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY2ODIwNzZhNzAwNjc4ZWUxZWEiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTUzNCwiZXhwIjoxNTk4ODg4NzM0LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiXX0.UFFVazmntfOPfiTGgP-GmJRtvPlgKO3qTeEVYC5DeqCRFu57dXkv4Ta6uOhd6_CXro2Yh3BFg_uoI0Vw0hQvusmLiMu1D2x1fhcZ26UfE-UpfwLW5q1v7Ur1cLfz3VmTOMujrMeQqZFttHhqTthblb7P-e_LipeAak-KXdiRyHSsmZXBndSn8PxIMRbjkkg44qUlIbVeo9Zqc8EUhs8D6Qec7sdreKgPMwxzBHRMd6dPIRFGlYkDz5GyFSQnJz63xKD38QqwCIWzeAK_HG4BZ59v_m1ksQ0KQzeINEtHBIsOjBGGcVnWhHe9PqYOPfoV6rE043kJ0FUGGrEj3BQrgQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/movie/1",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f85c1f11-2636-4517-b69e-a34933dcb01a",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY2ODIwNzZhNzAwNjc4ZWUxZWEiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTUzNCwiZXhwIjoxNTk4ODg4NzM0LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiXX0.UFFVazmntfOPfiTGgP-GmJRtvPlgKO3qTeEVYC5DeqCRFu57dXkv4Ta6uOhd6_CXro2Yh3BFg_uoI0Vw0hQvusmLiMu1D2x1fhcZ26UfE-UpfwLW5q1v7Ur1cLfz3VmTOMujrMeQqZFttHhqTthblb7P-e_LipeAak-KXdiRyHSsmZXBndSn8PxIMRbjkkg44qUlIbVeo9Zqc8EUhs8D6Qec7sdreKgPMwxzBHRMd6dPIRFGlYkDz5GyFSQnJz63xKD38QqwCIWzeAK_HG4BZ59v_m1ksQ0KQzeINEtHBIsOjBGGcVnWhHe9PqYOPfoV6rE043kJ0FUGGrEj3BQrgQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY2ODIwNzZhNzAwNjc4ZWUxZWEiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTUzNCwiZXhwIjoxNTk4ODg4NzM0LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiXX0.UFFVazmntfOPfiTGgP-GmJRtvPlgKO3qTeEVYC5DeqCRFu57dXkv4Ta6uOhd6_CXro2Yh3BFg_uoI0Vw0hQvusmLiMu1D2x1fhcZ26UfE-UpfwLW5q1v7Ur1cLfz3VmTOMujrMeQqZFttHhqTthblb7P-e_LipeAak-KXdiRyHSsmZXBndSn8PxIMRbjkkg44qUlIbVeo9Zqc8EUhs8D6Qec7sdreKgPMwxzBHRMd6dPIRFGlYkDz5GyFSQnJz63xKD38QqwCIWzeAK_HG4BZ59v_m1ksQ0KQzeINEtHBIsOjBGGcVnWhHe9PqYOPfoV6rE043kJ0FUGGrEj3BQrgQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "52d14f58-8700-4f47-9c57-4d4d37f5875c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "87592af7-0b4f-4668-85e0-0538d1e5fbef",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c259639a-320d-480d-a30c-3d7d76a89bad",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/directors ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5b4753e7-1408-4356-be93-e60b98dc6329",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/directors",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"directors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2c123d33-7641-40ae-8ea7-0981247357ea",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie_title\":\"1917\",\n    \"movie_rate\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/movie",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/director",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "114f0195-7c7c-427f-b797-02fdb492d5ad",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"director_name\":\"name\",\n    \"movie_id\":\"3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/director",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"director"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b9c2998d-bea1-4d61-8679-548e4fee6623",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie_rate\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/movie/3",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movie",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7042d2f1-7006-45f6-be03-991a7c57fe25",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-fsns-2020.herokuapp.com/movies/3",
+							"protocol": "https",
+							"host": [
+								"capstone-fsns-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODg4MTc2MiwiZXhwIjoxNTk4ODg4OTYyLCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.b9CIaj5IdmqRmNpndvI8_XR1tDyUemCZxOknIf-WOdZsGXoHzO_PyKB5GO-WlGFZJcDmZz6XyjYHkvHoZtPMlMycpMHpqfeVsQWIPTSllv2E542V1rGhN77NywBJ0JaObLniKKlmkkS6zRvDV1CdNYRb0rjGcyJDeUqtZ5WqRWMv8ErD-bChgp4uozpwycaSTvLmi8jAnCqwQKpipsbFJfM6aryT1J6ZfKHA0b4mV3utnZjSoJvQHgk40I-jvhHzVI4Oj4cRMAThe8qP3fUINRl-BrxX4uTy26Y9Txx7tICtD0tCVlNslgQyy_zITG8Nx-ZJMBz7ciOuaANrIKAOyg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "469db0e0-bb9f-4f30-8a05-b5efb4a983d2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "28f8e845-be5b-4a0e-8b36-da50118a5be9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3343c04e-65b8-403a-9f16-13a959ed8933",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8f2ba05b-8497-4fe7-80cc-9aeca3fd327f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "7da0fa13-ecd9-4d7d-8e38-fde2c81cfdaf",
+			"key": "host",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
