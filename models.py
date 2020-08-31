@@ -8,7 +8,7 @@ import psycopg2
 # set the value of the variable to 'prod'
 # if in the production mood or to 'dev'
 # if in the developing mood
-ENV = 'dev'
+ENV = 'prod'
 
 # check if in the developing mood
 if ENV == 'dev':

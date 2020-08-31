@@ -6,7 +6,7 @@ from urllib.request import urlopen
 
 
 
-ENV = 'dev'
+ENV = 'prod'
 if ENV == 'dev':
     AUTH0_DOMAIN = 'csfs2020.us.auth0.com'
     ALGORITHMS = ['RS256']
