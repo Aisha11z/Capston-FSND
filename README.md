@@ -1,5 +1,5 @@
 # Aisha's Capston-FSND
-The project models a company that is responsible for creating movies and managing and assigning directors to those movies.
+The project models a system has a library of movies hat is responsible for creating movies and managing and assigning directors to those movies.
 
 frontend comming soon....
 
@@ -31,7 +31,7 @@ This will install all of the required packages we selected within the `requireme
 - [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS. 
 
 - [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server. 
- Running the server
+ ##### Running the server
 
 From within the  directory first ensure you are working using your created virtual environment.
 
