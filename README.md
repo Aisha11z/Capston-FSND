@@ -38,10 +38,8 @@ From within the  directory first ensure you are working using your created virtu
 To run the server, execute:
 
 ```bash
-source setup.sh
 export FLASK_APP=app.py
-export FLASK_ENV=development
-flask run
+flask run --reload
 ```
 ## Roles and Permissions:
 - USER
@@ -216,8 +214,4 @@ They have this format
 - ADMIN: abc@gmail.com
 ##### PASSWORD
 - you can use this password for both :Password123
-3.  after that you can copy the access token from the url and test it in postman or curl as shown above
-
-
-
-
+3.  after that you can copy the access token from the url and test it in postman or curl as shown above.
