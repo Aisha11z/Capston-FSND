@@ -5,13 +5,16 @@ import json
 from sqlalchemy.orm import backref
 import psycopg2
 
-#set the value of the variable to 'prod'  if in the production mood or to 'dev' if in the developing mood
+# set the value of the variable to 'prod'
+# if in the production mood or to 'dev'
+# if in the developing mood
 ENV = 'prod'
 
-# check if in the developing mood to use the local db 
+# check if in the developing mood
 if ENV == 'dev':
     database_name = "capstone"
-    database_path = "postgres://{}/{}".format('postgres:aisha_abdullah@localhost:5432', database_name)
+    database_path = "postgres://{}/{}".format(
+    'postgres:aisha_abdullah@localhost:5432', database_name)
 else:
     database_name = "capstone"
     database_path = os.environ['DATABASE_URL']
@@ -32,26 +35,19 @@ def setup_db(app, database_path=database_path):
     db.init_app(app)
     db.create_all()
 
-
 '''
 Movie
 '''
-
-
 class Movie(db.Model):
     __tablename__ = 'movie'
 
     id = Column(Integer, primary_key=True)
     title = Column(String(80), nullable=False)
-    rate = Column(Integer,nullable=False)
+    rate = Column(Integer, nullable=False)
     director = db.relationship('Director', backref='movie', lazy=True)
-
-    def __init__(self, title,rate):
+    def __init__(self, title, rate):
         self.title = title
-        self.rate=rate
-        
-        
-
+        self.rate = rate
 
     def insert(self):
         db.session.add(self)
@@ -69,28 +65,21 @@ class Movie(db.Model):
             'id': self.id,
             'title': self.title,
             'rate': self.rate,
-            'director':self.director
+            'director': self.director
         }
-
-
-
 '''
 director
 '''
-
-
 class Director(db.Model):
     __tablename__ = 'director'
 
     id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), nullable=False)
-    
-    def __init__(self, name,movie_id):
+    def __init__(self, name, movie_id):
         self.name = name
         self.movie_id = movie_id
         
-
     def insert(self):
         db.session.add(self)
         db.session.commit()
@@ -107,5 +96,3 @@ class Director(db.Model):
             'id': self.id,
             'name': self.name,
         }
-
-

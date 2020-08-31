@@ -31,7 +31,7 @@ def create_app(test_config=None):
     def index():
         return render_template('index.html')
 
-    # this endpoint to retrieve the movie list ,needs auth user and admin to see the output
+    # endpoint to get the all movies,needs the auth of user and admin
     @app.route('/movies', methods=['GET'])
     @requires_auth('get:movies')
     def get_movies(payload):
@@ -51,7 +51,9 @@ def create_app(test_config=None):
                         "id": movie.id,
                         "title": movie.title,
                         "rate": movie.rate,
-                        "directors": [director.id for director in Director.query.filter_by(movie_id=movie.id).all()]
+                        "directors": 
+                        [director.id for director in Director.query.filter_by(
+                            movie_id=movie.id).all()]
 
                     })
 
@@ -59,12 +61,10 @@ def create_app(test_config=None):
                 'Movies_list': Movies_list,
                 'status': 200,
                 'success': True,
-
             })
-        except:
+        except Exception:
             abort(422)
-
-    # this endpoint to retrieve the directors list ,needs auth user and admin to see the output
+    # endpoint to get directors list ,needs the auth of user and admin
 
     @app.route('/directors', methods=['GET'])
     @requires_auth('get:directors')
@@ -88,7 +88,7 @@ def create_app(test_config=None):
                 'status': 200,
                 'success': True,
             })
-        except:
+        except Exception:
             abort(422)
 
     # this endpoint to add a movie to the DB , only admin can add
@@ -108,10 +108,11 @@ def create_app(test_config=None):
             movie = Movie(title=movie_title, rate=movie_rate)
             movie.insert()
             return jsonify({
+                'id' : movie.id,
                 'status': 200,
                 'success': True,
             })
-        except:
+        except Exception:
             abort(422)
     # this endpoint to add a director to the DB , only admin can add
 
@@ -130,7 +131,7 @@ def create_app(test_config=None):
                 'status': 200,
                 'success': True,
             })
-        except:
+        except Exception:
             abort(422)
 
     # this endpoint to update a movie information , only admin can
@@ -155,7 +156,7 @@ def create_app(test_config=None):
                 'status': 200,
                 'success': True
             })
-        except:
+        except Exception:
             abort(422)
 
     # this endpoint to delete a movie frome the DB , only admin can
@@ -177,7 +178,7 @@ def create_app(test_config=None):
                 'status': 200,
                 'success': True,
             })
-        except:
+        except Exception:
             abort(422)
 
     '''
