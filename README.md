@@ -211,10 +211,10 @@ They have this format
 1. open the url https://capstone-fsns-2020.herokuapp.com
 2.  you can use this temperoray acounts I created in auth0 to login:
 #####  USER
-- USER: abcd@ gmail.com
+- USER: abcd@gmail.com
 #####  ADMIN
-- ADMIN: abc@ gmail.com
-##### password 
+- ADMIN: abc@gmail.com
+##### PASSWORD
 - you can use this password for both :Password123
 3.  after that you can copy the access token from the url and test it in postman or curl as shown above
 
