@@ -216,7 +216,7 @@ They have this format
 - ADMIN: abc@ gmail.com
 ##### password 
 - you can use this password for both :Password123
-4- after that you can copy the access token from the url and test it in postman or curl as shown above
+4 - after that you can copy the access token from the url and test it in postman or curl as shown above
 
 
 
