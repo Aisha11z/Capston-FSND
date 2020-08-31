@@ -208,7 +208,7 @@ They have this format
     - 500 'internal server error'
 ```
 ## TO TEST THE APP
-- open the url https://capstone-fsns-2020.herokuapp.com
+1- open the url https://capstone-fsns-2020.herokuapp.com
 - you can use this temperoray acounts I created in auth0 to login:
 - #####  USER
 - USER: abcd@ gmail.com
