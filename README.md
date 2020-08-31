@@ -1,5 +1,5 @@
 # Aisha's Capston-FSND
-The capstone project intended for the Full-Stack Developer Nanodegree program from Udacity.the project models a system that has a library of movies that is responsible for creating movies and managing and assigning directors to those movies.
+The capstone project intended for the Full-Stack Developer Nanodegree program from Udacity.the project models a system for a Company that is responsible for creating movies and managing and assigning directors to those movies.
 
 frontend comming soon....
 
