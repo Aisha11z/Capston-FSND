@@ -30,29 +30,6 @@ endpoints without having to go through the
 authentication process.
 '''
 
-def mock_decorator(permission=''):
-    def requires_auth_decorator(f):
-        @wraps(f)
-        def wrapper(*args, **kwargs):
-            token = 'fake'
-            try:
-                payload = 'fake'
-            except Exception:
-                raise AuthError({
-                    'code': 'invalid_claims',
-                    'description':
-                    'Incorrect claims. Please, check the audience and issuer.'
-                }, 401)
-            # check_permissions(permission, payload)
-            return f(payload, *args, **kwargs)
-
-        return wrapper
-    return requires_auth_decorator
-
-
-
-
-
 class CapstoneTestCase(unittest.TestCase):
     """This class represents the Capstone test case"""
 
