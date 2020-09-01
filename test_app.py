@@ -56,8 +56,8 @@ class CapstoneTestCase(unittest.TestCase):
     """
     Test each endpoint.
     """
-    def test_get_movie(self):
-        res = self.client().get('/movies' , headers=movies_admin_auth_header)
+    def test_get_movie_role_based(self):
+        res = self.client().get('/movies' , headers=movies_user_auth_header)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
