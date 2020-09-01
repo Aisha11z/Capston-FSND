@@ -8,6 +8,21 @@ from models import setup_db, db, Movie, Director
 from auth.auth import AuthError, requires_auth
 from unittest.mock import patch
 
+# Note : if the token expired pleas login using the acounts in readme file 
+# and copy them here
+
+bearer_tokens = {
+    "movies_admin": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY5ODliNzI1NDAwNmQ5YjEyZDgiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODk3NzU3NCwiZXhwIjoxNTk4OTg0Nzc0LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOm1vdmllIiwiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDptb3ZpZSIsInBvc3Q6ZGlyZWN0b3IiLCJwb3N0Om1vdmllIl19.G3h7q2zY1ikiRq_Rncj09b1l_PBMIxg627_o_eTJ5E3yLCXhQlO5a4Ie7YDA6zq_HuykzMXdKh1iXnk9AkLEWANvnd71ihbvfGpy4Xe2t10Mjg99z_qYz9mBryOSlFyIuGdqC2OkLHJnHTKP57KZ91rIQGkGToS2UHGoX7DQpckh2xKil-i0TXQ_AOQhZhO7jVEKfUT78qDELjIoEHyGI_9p70n-MjMVxCNXMDez5uCNbHV0zmepVBElAefZvVlTwbUSe5whfVi3-jAk-1Wjr34UbS5xSgen0HWl65xLiCBuowZZEBWyX7avMlphiJp1GJ_M3IX_tVfSm_KaH7QrMQ",
+    "movies_user": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVOZjBGQXQ2YlVzMHhkWm01YnJYRCJ9.eyJpc3MiOiJodHRwczovL2NzZnMyMDIwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZjRhYzY2ODIwNzZhNzAwNjc4ZWUxZWEiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5ODk3NzQ0NSwiZXhwIjoxNTk4OTg0NjQ1LCJhenAiOiJ1UHBCYXdkVnNZZXpkSjA1bDJNMW8yM1B6OVllNHZEZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRpcmVjdG9ycyIsImdldDptb3ZpZXMiXX0.bx1tAGpZojs1CnKl6bbVoVst65Z9rZFXkw6tnq_LySzI_4M_bh0GkFLiKaV_MuYNSgueK7tM7uBF3d04uWpNPZOx2FFIqwzedwooO_kNj5IPdz9MzMk0kgdPIPOmBq7zWWmSelCb5DpODHOl-5mixWCOT6qArpNpivLUtrTiw3SzOyPBIhkxGr-mx_BKAdVGC5ASEqIzVnqiMB4aRZ2JRN15w-yfiBztfiQK-1vWJaFMWuoUuIUSVXaEzmsGieYhnJDArflgfzON6GRpCmg99AZbBtpIqYwzH1sMeK2lxc87EuhB8IqxaciE-I-Uq5S0rITW8a0Ak0_dzS7sPgt10g",
+
+}
+movies_admin_auth_header = {
+    'Authorization': bearer_tokens['movies_admin']
+}
+
+movies_user_auth_header = {
+    'Authorization': bearer_tokens['movies_user']
+}
 '''
 Below "mock_decorator" is to mimic a fake JWT token to
 bybass the @requires_auth decorator in order to test the
@@ -35,7 +50,7 @@ def mock_decorator(permission=''):
     return requires_auth_decorator
 
 
-patch('app.requires_auth', mock_decorator).start()
+
 
 
 class CapstoneTestCase(unittest.TestCase):
@@ -65,13 +80,13 @@ class CapstoneTestCase(unittest.TestCase):
     Test each endpoint.
     """
     def test_get_movie(self):
-        res = self.client().get('/movies')
+        res = self.client().get('/movies' , headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
 
     def test_get_directors(self):
-        res = self.client().get('/directors')
+        res = self.client().get('/directors' , headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
@@ -80,7 +95,7 @@ class CapstoneTestCase(unittest.TestCase):
         #test the success case of adding a movie 
         # with attributes: movie_title,movie_rate
         res = self.client().post('/movie', 
-        json = {'movie_title' : 'test_movie', 'movie_rate' : 9 })
+        json = {'movie_title' : 'test_movie', 'movie_rate' : 9 } , headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(data['success'], True)
         self.assertEqual(res.status_code, 200)
@@ -90,18 +105,29 @@ class CapstoneTestCase(unittest.TestCase):
         # a movie without the attributes
         # which should return a 422 error
         res = self.client().post('/movie',
-        json={'movie_title' : None, 'movie_rate' : None})
+        json={'movie_title' : None, 'movie_rate' : None}, headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], "Unprocessable Entity")
         self.assertEqual(data['error'], 422)
+
+    def test_add_movie_failure_role_based(self):
+        # test the failure case of adding by a user 
+        # a movie without the attributes
+        # which should return a 422 error
+        res = self.client().post('/movie',
+        json={'movie_title' : 'add movie by admin', 'movie_rate' : 9 },
+        headers=movies_user_auth_header)
+        data = json.loads(res.data)
+        self.assertEqual(data['code'], "forbidden")
+        self.assertEqual(res.status_code, 401)
 
     def test_add_director_success(self):
         # test the success case of adding 
         # a director with attributes:
         # director_name,movie_id
         res = self.client().post('/director',
-        json={'director_name' : 'aisha', 'movie_id' : 1})
+        json={'director_name' : 'aisha', 'movie_id' : 1} , headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(data['success'], True)
         self.assertEqual(res.status_code, 200)
@@ -110,7 +136,7 @@ class CapstoneTestCase(unittest.TestCase):
         # test the failure case of adding a 
         # director without the attributes
         # which should return a 422 error
-        res = self.client().post('/director' , json={})
+        res = self.client().post('/director' , json={} , headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], "Unprocessable Entity")
@@ -120,7 +146,7 @@ class CapstoneTestCase(unittest.TestCase):
         # Successfuly updating the "movie_rate" of the
         # movie with "id": 1 from 9 to 10
         res = self.client().patch('/movie/1',
-        json={'movie_rate': 10})
+        json={'movie_rate': 10} , headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(data['success'], True)
         self.assertEqual(res.status_code, 200)
@@ -130,7 +156,7 @@ class CapstoneTestCase(unittest.TestCase):
         # a movie without the attributes
         # which should return a 422 error
         res = self.client().patch('/movie/1',
-        json={'movie_rate' : None, 'movie_title' : None})
+        json={'movie_rate' : None, 'movie_title' : None} , headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], "Unprocessable Entity")
@@ -140,7 +166,7 @@ class CapstoneTestCase(unittest.TestCase):
         # test the success case of  deleting a movie  
         test_movie=Movie(title = 'test', rate = 5)
         test_movie.insert()
-        res = self.client().delete('/movies/{}'.format(test_movie.id))
+        res = self.client().delete('/movies/{}'.format(test_movie.id) , headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(data['success'], True)
         self.assertEqual(res.status_code, 200)
@@ -149,7 +175,7 @@ class CapstoneTestCase(unittest.TestCase):
         # test the failure case of deleting 
         # a movie that not exist
         # which should return a 404 error
-        res = self.client().delete('/movies/5')
+        res = self.client().delete('/movies/5' , headers=movies_admin_auth_header)
         data = json.loads(res.data)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], "Not Found")
