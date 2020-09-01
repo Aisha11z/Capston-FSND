@@ -23,12 +23,7 @@ movies_admin_auth_header = {
 movies_user_auth_header = {
     'Authorization': bearer_tokens['movies_user']
 }
-'''
-Below "mock_decorator" is to mimic a fake JWT token to
-bybass the @requires_auth decorator in order to test the
-endpoints without having to go through the
-authentication process.
-'''
+
 
 class CapstoneTestCase(unittest.TestCase):
     """This class represents the Capstone test case"""
